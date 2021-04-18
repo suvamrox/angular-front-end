@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  url: string = 'http://localhost:3000';
+  url: string = 'https://test.cherishiot.com'; //'http://localhost:3000';
 
   public UserListChangeEvent: Subject<any> = new Subject<any>();
   public EditUserEvent: Subject<any> = new Subject<any>();

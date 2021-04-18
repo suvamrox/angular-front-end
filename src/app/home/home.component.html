@@ -14,7 +14,6 @@
     <table class="w3-table-all w3-hoverable w3-small">
         <thead>
             <tr class="w3-light-grey">
-                <th>No:</th>
                 <th>Name</th>
                 <th>Marks</th>
                 <th>Subjects</th>
@@ -23,7 +22,6 @@
             </tr>
         </thead>
         <tr *ngFor="let user of users;let i = index">
-            <td>{{i}}</td>
             <td>{{user.name}}</td>
             <td>{{user.marks}}</td>
             <td>{{user.subjects}}</td>
