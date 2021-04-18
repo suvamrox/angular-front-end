@@ -1,0 +1,14 @@
+<div class="w3-panel" *ngIf="data">
+    <span>Items per page:{{data.previous?.page +1 || 1}} &nbsp; &nbsp; &nbsp; {{(data.previous?.page *30 || 1)}} –
+        {{(data.previous?.page +1 ||
+        1) * 30}} of
+        {{data.totalDoc}}</span>
+    <div class="w3-display-container">
+        <div class="w3-display-right">
+            <button (click)="next(data.previous?.page,data.previous?.limit)" [disabled]="!data.previous"
+                class="w3-button w3-small w3-teal "><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+            <button (click)="next(data.next?.page,data.next?.limit)" [disabled]="!data.next"
+                class="w3-button w3-small w3-teal "><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+        </div>
+    </div>
+</div>

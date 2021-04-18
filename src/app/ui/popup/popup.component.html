@@ -1,0 +1,29 @@
+<div id="id01" class="w3-modal " style="display:block">
+    <div class="w3-modal-content">
+        <div class="w3-container  ">
+            <button class="w3-button w3-circle w3-red w3-display-topright" (click)="close.next()">&#x2716;</button>
+            <form class="w3-container" [formGroup]="userFrom" (ngSubmit)="onSubmit()">
+
+                <label class="w3-text-blue"><b> Name</b></label>
+                <input formControlName="name" class="w3-input w3-border" type="text">
+
+                <label class="w3-text-blue"><b>marks</b></label>
+                <input formControlName="marks" class="w3-input w3-border" type="number">
+
+                <label class="w3-text-blue"><b>percent</b></label>
+                <input formControlName="percent" class="w3-input w3-border" type="number">
+
+                <div formArrayName="subjects">
+                    <a class="w3-btn w3-yellow" (click)="addSubject()">Add Subject</a>
+                    <div *ngFor="let alias of subjects.controls; let i=index">
+                        <input [formControlName]="i" class="w3-input w3-border" type="text">
+                    </div>
+                </div>
+
+                <button class="w3-btn w3-blue" type="submit" [disabled]="!userFrom.valid">Register</button>
+
+
+            </form>
+        </div>
+    </div>
+</div>
